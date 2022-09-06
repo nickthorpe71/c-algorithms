@@ -51,9 +51,23 @@ void printCtoFFor14() /* Fahrenheit-Celcius table */
 	  printf("%4d %6.1f\n", fahr, (5.0/9.0)*(fahr-32));
 }
 
+// 1.5 A Collection of Useful Programs
+
+void fileCopy1() /* copy input to output; 1st version */
+{
+  int c;
+	c = getchar();
+
+	while (c != EOF) {
+    putchar(c);
+		c = getchar();
+	}
+}
+
+
 void main() 
 {
-  printCtoFFor14();
+  fileCopy1();  
 }
 
 
