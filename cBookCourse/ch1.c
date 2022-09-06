@@ -64,10 +64,17 @@ void fileCopy1() /* copy input to output; 1st version */
 	}
 }
 
+void fileCopy2() /* copy input to output; 2nd version */
+{
+  int c;
+	while ((c = getchar()) != EOF)
+	  putchar(c);
+}
+
 
 void main() 
 {
-  fileCopy1();  
+  fileCopy2();  
 }
 
 
