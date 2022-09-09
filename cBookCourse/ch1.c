@@ -71,10 +71,43 @@ void fileCopy2() /* copy input to output; 2nd version */
 	  putchar(c);
 }
 
+void characterCount() /* count characters in input */
+{
+  long nc;
+
+	nc = 0;
+	while (getchar() != EOF)
+	  ++nc;
+
+	printf("%ld\n", nc);
+}
+
+#define YES 1
+#define NO  2
+
+void wordCount()
+{
+  int c, nl, nw, nc, inword;
+
+	inword = NO;
+	nl = nw = nc = 0;
+	while ((c = getchar()) != EOF) {
+    ++nc;
+		if (c == '\n')
+		  ++nl;
+		if (c == ' ' || c == '\n' || c == '\t' )
+		  inword = NO;
+		else if ( inword == NO ) {
+      inword = YES;
+			++nw;
+		}
+	}
+	printf("%d %d %d\n", nl, nw, nc);
+}
 
 void main() 
 {
-  fileCopy2();  
+  wordCount();  
 }
 
 
