@@ -59,6 +59,27 @@ void listInsertAfter(struct list *l, int item, int after)
   }
 }
 
+void listMoveNextToFront(struct list *l, int item)
+{
+  struct node *p = l->head;
+  struct node *prev = NULL;
+  while (p != NULL)
+  {
+    if (p->item == item)
+    {
+      if (prev != NULL)
+      {
+        prev->next = p->next;
+        p->next = l->head;
+        l->head = p;
+      }
+      return;
+    }
+    prev = p;
+    p = p->next;
+  }
+}
+
 void listDelete(struct list *l, int item)
 {
   struct node *n = l->head;
