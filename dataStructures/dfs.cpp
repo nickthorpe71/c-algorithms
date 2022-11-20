@@ -25,6 +25,24 @@ void printTreePreorder(Node *root)
   printTreePreorder(root->right);
 }
 
+void printTreeInorder(Node *root)
+{
+  if (root == nullptr)
+    return;
+  printTreeInorder(root->left);
+  cout << root->data << endl;
+  printTreeInorder(root->right);
+}
+
+void printTreePostorder(Node *root)
+{
+  if (root == nullptr)
+    return;
+  printTreePostorder(root->left);
+  printTreePostorder(root->right);
+  cout << root->data << endl;
+}
+
 int main()
 {
   Node *root = createNode(1);
@@ -37,7 +55,7 @@ int main()
   root->left->right->left = createNode(9);
   root->right->right->left = createNode(15);
 
-  printTreePreorder(root);
+  printTreePostorder(root);
 
   cin.get();
 }
